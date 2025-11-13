@@ -1,3 +1,4 @@
+# Build artifacts
 /_build
 /cover
 /deps
@@ -6,5 +7,35 @@
 erl_crash.dump
 *.ez
 *.beam
+
+# Escript
+/blog_engine
+
+# Configuration
 /config/*.secret.exs
+
+# Editor and IDE
 .elixir_ls/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data storage
+/priv/data/*.json
+!/priv/data/.gitkeep
+
+# Test artifacts
+/test/fixtures/data/
+
+# Dialyzer
+/priv/plts/
+
+# Coverage
+/cover/
+*.coverdata
