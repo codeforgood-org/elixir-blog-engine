@@ -1,0 +1,49 @@
+# Configuration for labeler - https://github.com/actions/labeler
+
+documentation:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'docs/**/*'
+      - '*.md'
+      - 'README*'
+      - 'CHANGELOG*'
+      - 'CONTRIBUTING*'
+
+tests:
+  - changed-files:
+    - any-glob-to-any-file: 'test/**/*'
+
+dependencies:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'mix.exs'
+      - 'mix.lock'
+
+docker:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'Dockerfile'
+      - 'docker-compose.yml'
+      - '.dockerignore'
+
+github-actions:
+  - changed-files:
+    - any-glob-to-any-file: '.github/workflows/*'
+
+configuration:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'config/**/*'
+      - '.formatter.exs'
+      - '.credo.exs'
+      - '.editorconfig'
+
+core:
+  - changed-files:
+    - any-glob-to-any-file: 'lib/**/*'
+
+scripts:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'scripts/**/*'
+      - 'Makefile'

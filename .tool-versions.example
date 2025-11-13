@@ -1,0 +1,13 @@
+# asdf version management
+# Install asdf: https://asdf-vm.com/guide/getting-started.html
+
+# Install required plugins
+asdf plugin add elixir https://github.com/asdf-vm/asdf-elixir.git
+asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
+
+# Install versions from .tool-versions
+asdf install
+
+# Set versions globally (optional)
+asdf global elixir 1.16.0
+asdf global erlang 26.2.1

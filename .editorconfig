@@ -1,0 +1,33 @@
+# This file is used by various editors and IDEs to maintain
+# consistent coding styles across different editors and IDEs.
+# See https://editorconfig.org for more information.
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{ex,exs}]
+indent_style = space
+indent_size = 2
+
+[*.{md,markdown}]
+trim_trailing_whitespace = false
+
+[*.{yml,yaml}]
+indent_size = 2
+
+[Makefile]
+indent_style = tab
+
+[*.json]
+indent_size = 2
+
+[*.sh]
+indent_style = space
+indent_size = 2

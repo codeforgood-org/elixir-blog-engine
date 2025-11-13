@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Pre-commit hook for BlogEngine
+# Runs code quality checks before allowing commit
+# Install: ln -sf ../../.git-hooks/pre-commit .git/hooks/pre-commit
+
+set -e
+
+echo "Running pre-commit checks..."
+echo ""
+
+# Check if mix is available
+if ! command -v mix &> /dev/null; then
+    echo "⚠️  Mix not found. Skipping Elixir checks."
+    exit 0
+fi
+
+# Run formatter check
+echo "🔍 Checking code formatting..."
+if ! mix format --check-formatted 2>&1 | grep -q "mix format"; then
+    echo "✓ Code is properly formatted"
+else
+    echo "❌ Code formatting issues found"
+    echo "   Run: mix format"
+    exit 1
+fi
+
+# Run Credo
+echo ""
+echo "🔍 Running Credo..."
+if mix credo --strict 2>&1 | grep -q "Warnings"; then
+    echo "⚠️  Credo warnings found"
+    echo "   Run: mix credo --strict"
+    # Don't fail on warnings, just notify
+else
+    echo "✓ Credo checks passed"
+fi
+
+# Run tests
+echo ""
+echo "🧪 Running tests..."
+if mix test --trace; then
+    echo "✓ All tests passed"
+else
+    echo "❌ Tests failed"
+    exit 1
+fi
+
+echo ""
+echo "✅ Pre-commit checks passed!"
+echo ""

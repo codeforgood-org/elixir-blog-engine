@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Commit message hook for BlogEngine
+# Validates commit message format
+# Install: ln -sf ../../.git-hooks/commit-msg .git/hooks/commit-msg
+
+commit_msg_file=$1
+commit_msg=$(cat "$commit_msg_file")
+
+# Skip merge commits
+if echo "$commit_msg" | grep -q "^Merge"; then
+    exit 0
+fi
+
+# Check minimum length
+if [ ${#commit_msg} -lt 10 ]; then
+    echo "❌ Commit message too short (minimum 10 characters)"
+    echo "   Current: ${#commit_msg} characters"
+    exit 1
+fi
+
+# Check for imperative mood (starts with verb)
+first_word=$(echo "$commit_msg" | head -n1 | awk '{print $1}')
+if echo "$first_word" | grep -qE '^(Add|Fix|Update|Remove|Refactor|Document|Test|Improve|Create|Delete|Move|Rename|Extract|Optimize|Merge|Bump|Revert)'; then
+    exit 0
+fi
+
+# Warning for non-standard format
+echo "⚠️  Warning: Commit message should start with an imperative verb"
+echo "   Examples: Add, Fix, Update, Remove, Refactor, etc."
+echo "   Current: $first_word"
+echo ""
+echo "Continue anyway? (y/N)"
+read -r response
+if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    exit 0
+else
+    exit 1
+fi
