@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Welcome to BlogEngine",
+    "body": "This is your first post in BlogEngine!\n\nBlogEngine is a powerful CLI tool for managing blog posts. You can create, edit, search, and organize your posts right from your terminal.\n\nTry these commands:\n- 'list' to see all posts\n- 'new' to create a post\n- 'search' to find posts\n- 'help' for more commands",
+    "tags": ["welcome", "tutorial"],
+    "created_at": "2025-11-13T17:00:00Z",
+    "updated_at": null
+  },
+  {
+    "id": 2,
+    "title": "Getting Started with Elixir",
+    "body": "Elixir is a dynamic, functional language designed for building scalable and maintainable applications.\n\nKey features:\n- Functional programming paradigm\n- Pattern matching\n- Concurrent and distributed\n- Runs on the Erlang VM (BEAM)\n- Great for web development with Phoenix\n\nIf you're new to Elixir, check out the official guides at elixir-lang.org!",
+    "tags": ["elixir", "programming", "tutorial"],
+    "created_at": "2025-11-13T17:15:00Z",
+    "updated_at": null
+  },
+  {
+    "id": 3,
+    "title": "My Favorite Elixir Features",
+    "body": "After using Elixir for a while, here are my favorite features:\n\n1. Pattern Matching - Makes code incredibly clear\n2. The Pipe Operator |> - Transforms nested function calls into readable pipelines\n3. Immutability - No more debugging weird side effects\n4. OTP - Battle-tested concurrency primitives\n5. Documentation - First-class docs with ExDoc\n\nWhat are your favorite Elixir features?",
+    "tags": ["elixir", "opinion", "features"],
+    "created_at": "2025-11-13T18:30:00Z",
+    "updated_at": "2025-11-13T19:00:00Z"
+  },
+  {
+    "id": 4,
+    "title": "Building CLI Applications",
+    "body": "Command-line applications are a great way to learn a new language.\n\nElixir makes it easy with:\n- escript for building executables\n- IO module for user input\n- Pattern matching for command parsing\n- Mix for project management\n\nBlogEngine itself is a great example of what you can build!",
+    "tags": ["elixir", "cli", "development"],
+    "created_at": "2025-11-13T19:45:00Z",
+    "updated_at": null
+  },
+  {
+    "id": 5,
+    "title": "Organizing Your Blog with Tags",
+    "body": "Tags are a powerful way to organize your posts.\n\nTips for effective tagging:\n- Use consistent tag names\n- Don't over-tag (3-5 tags per post is good)\n- Think about categories (topics, types, series)\n- Use the 'tags' command to see all your tags\n- Use 'tag <name>' to filter posts\n\nHappy blogging!",
+    "tags": ["blogging", "tips", "organization"],
+    "created_at": "2025-11-13T20:00:00Z",
+    "updated_at": null
+  }
+]

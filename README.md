@@ -1,6 +1,23 @@
 # BlogEngine
 
+[![CI](https://github.com/codeforgood-org/elixir-blog-engine/workflows/CI/badge.svg)](https://github.com/codeforgood-org/elixir-blog-engine/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Elixir](https://img.shields.io/badge/elixir-1.14%2B-purple.svg)](https://elixir-lang.org/)
+[![Erlang/OTP](https://img.shields.io/badge/erlang-25%2B-red.svg)](https://www.erlang.org/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 A powerful, feature-rich CLI blog engine built with Elixir. Manage your blog posts from the command line with an intuitive interface, persistent storage, and advanced features like tagging, search, and export/import capabilities.
+
+## 📚 Documentation
+
+- [Quick Start Guide](docs/QUICK_START.md) - Get started in 5 minutes
+- [API Documentation](docs/API.md) - Complete API reference
+- [Development Guide](docs/DEVELOPMENT.md) - Setup and workflow
+- [Architecture](docs/ARCHITECTURE.md) - Design and patterns
+- [Docker Guide](docs/DOCKER.md) - Docker usage and deployment
+- [Contributing](CONTRIBUTING.md) - How to contribute
+- [Security Policy](SECURITY.md) - Security guidelines
+- [Changelog](CHANGELOG.md) - Version history
 
 ## Features
 
@@ -47,6 +64,52 @@ mix escript.build
 Alternatively, you can run directly with Mix:
 ```bash
 mix run -e "BlogEngine.CLI.start()"
+```
+
+### Using Docker
+
+Run with Docker (no Elixir installation needed):
+
+```bash
+# Build the image
+docker build -t blog-engine .
+
+# Run interactively
+docker run -it --rm \
+  -v $(pwd)/priv/data:/app/priv/data \
+  blog-engine
+
+# Or use docker-compose
+docker-compose up blog-engine
+```
+
+See the [Docker Guide](docs/DOCKER.md) for more details.
+
+### Using Makefile
+
+Common tasks with make:
+
+```bash
+make install       # Install dependencies
+make build         # Build escript
+make run           # Build and run
+make test          # Run tests
+make quality       # Run format + lint
+make ci            # Run all CI checks
+make docker-build  # Build Docker image
+make help          # Show all commands
+```
+
+### Try the Examples
+
+Load sample posts to explore features:
+
+```bash
+# Import example posts
+./scripts/import_examples.sh
+
+# Or run the API demo
+mix run scripts/demo.exs
 ```
 
 ## Usage

@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  blog-engine:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: blog-engine:latest
+    container_name: blog-engine
+    volumes:
+      # Mount data directory to persist posts
+      - ./priv/data:/app/priv/data
+    stdin_open: true  # Enable interactive mode
+    tty: true         # Allocate pseudo-TTY
+    restart: unless-stopped
+
+  # Alternative service for development with hot reload
+  blog-engine-dev:
+    image: hexpm/elixir:1.16.0-erlang-26.2.1-alpine-3.19.0
+    container_name: blog-engine-dev
+    working_dir: /app
+    volumes:
+      - .:/app
+      - deps:/app/deps
+      - build:/app/_build
+    command: sh -c "mix deps.get && mix run -e 'BlogEngine.CLI.start()'"
+    stdin_open: true
+    tty: true
+    environment:
+      - MIX_ENV=dev
+
+volumes:
+  deps:
+  build:
