@@ -164,7 +164,7 @@ jobs:
         run: mix escript.build
 
       - name: Upload escript artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         with:
           name: blog_engine
           path: blog_engine
