@@ -28,7 +28,7 @@ ENV MIX_ENV=prod
 RUN mix escript.build
 
 # Runtime stage
-FROM alpine:3.19
+FROM alpine:3.22
 
 # Install runtime dependencies
 RUN apk add --no-cache \
