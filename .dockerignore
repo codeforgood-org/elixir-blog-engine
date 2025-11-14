@@ -1,0 +1,44 @@
+# Git
+.git
+.gitignore
+
+# Build artifacts
+_build
+deps
+*.ez
+blog_engine
+
+# Documentation
+doc
+docs
+
+# Test
+test
+cover
+*.coverdata
+
+# Development
+.elixir_ls
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data files (mount as volume instead)
+priv/data/*.json
+
+# CI/CD
+.github
+
+# Other
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+SECURITY.md
+Makefile
+examples
+scripts
+backups
