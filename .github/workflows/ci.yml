@@ -33,7 +33,7 @@ jobs:
           otp-version: ${{ matrix.otp }}
 
       - name: Restore dependencies cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             deps
@@ -68,7 +68,7 @@ jobs:
           otp-version: '26'
 
       - name: Restore dependencies cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             deps
@@ -83,7 +83,7 @@ jobs:
         run: mix credo --strict
 
       - name: Restore PLT cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         id: plt-cache
         with:
           path: priv/plts
@@ -112,7 +112,7 @@ jobs:
           otp-version: '26'
 
       - name: Restore dependencies cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             deps
@@ -149,7 +149,7 @@ jobs:
           otp-version: '26'
 
       - name: Restore dependencies cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             deps
